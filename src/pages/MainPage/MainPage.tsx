@@ -5,57 +5,17 @@ import { fetchUserData } from '../../features/userSlice';
 import { RootState, AppDispatch } from '../../store/store';
 import { Offer, UserLesson, UpcomingLesson } from '../../types';
 import Button from '../../components/Button/Button';
-
-export default function MainPage() {
-  const dispatch = useDispatch<AppDispatch>();
-  const { data, loading, error } = useSelector((state: RootState) => state.user);
-
-  useEffect(() => {
-    dispatch(fetchUserData());
-  }, [dispatch]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
-
-  if (!data) {
-    return null;
-  }
-
-  const { user, lessons, upcomingLessons } = data;
-
-  const offers: Offer[] = [
-    {
-      title: "До 31 декабря любой курс со скидкой 20%",
-      description: "До конца года у вас есть уникальная возможность воспользоваться нашей новогодней скидкой 20% на любой курс!",
-      image: "/path/to/image.png" 
-    }
-  ];
-
-  return (
-    <div className={styles.mainPage}>
-      <div className={styles.gridContainer}>
-        <Offers offers={offers} />
-        <NextLesson />
-        <HomeworkReports />
-        <LessonInfo lessons={lessons} />
-        <UpcomingLessons lessons={upcomingLessons} />
-      </div>
-    </div>
-  );
-}
+import OfferImage from '../../assets/images/SF_2 1.png'; 
 
 function Offers({ offers }: { offers: Offer[] }) {
   return (
     <div className={styles.offersContainer}>
       {offers.map((offer, index) => (
         <div key={index} className={styles.offer}>
-          <h2>{offer.title}</h2>
-          <p>{offer.description}</p>
+          <div className={styles.offerText}>
+            <h2 className={styles.offerTile}>{offer.title}</h2>
+            <p className={styles.offerDescription}>{offer.description}</p>
+          </div>
           <img src={offer.image} alt={offer.title} />
         </div>
       ))}
@@ -124,6 +84,51 @@ function UpcomingLessons({ lessons }: { lessons: UpcomingLesson[] }) {
         ))}
       </ul>
       <Button text="Button" type="button" />
+    </div>
+  );
+}
+
+export default function MainPage() {
+  const dispatch = useDispatch<AppDispatch>();
+  const { data, loading, error } = useSelector((state: RootState) => state.user);
+
+  useEffect(() => {
+    dispatch(fetchUserData());
+  }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!data) {
+    return null;
+  }
+
+  const { user, lessons, upcomingLessons } = data;
+
+  const offers: Offer[] = [
+    {
+      title: "До 31 декабря любой курс со скидкой 20%",
+      description: "До конца года у вас есть уникальная возможность воспользоваться нашей новогодней скидкой 20% на любой курс!",
+      image: OfferImage 
+    }
+  ];
+
+  return (
+    <div className={styles.mainPage}>
+      <div className={styles.gridContainerUp}>
+        <Offers offers={offers} />
+        <NextLesson />
+        <HomeworkReports />
+      </div>
+      <div className={styles.gridContainerDown}>
+        <LessonInfo lessons={lessons} />
+        <UpcomingLessons lessons={upcomingLessons} />
+      </div>
     </div>
   );
 }

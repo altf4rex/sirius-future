@@ -1,12 +1,35 @@
 .mainPage {
-  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
+.gridContainerUp,
+.gridContainerDown {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.offersContainer {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.nextLessonContainer,
+.homeworkReportsContainer {
+  flex: 1 1 20%;
+  min-width: 150px; 
+}
+
+.lessonInfoContainer {
+  flex: 1 1 30%;
+  min-width: 300px; 
+}
+
+.upcomingLessonsContainer {
+  flex: 1 1 60%;
+  min-width: 300px;
 }
 
 .offersContainer,
@@ -14,20 +37,44 @@
 .homeworkReportsContainer,
 .lessonInfoContainer,
 .upcomingLessonsContainer {
+  border-radius: 30px;
   background-color: var(--color-bg);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-dark-violet);
+}
+.offersContainer{
+  position: relative;
+}
+.offer {
+  display: flex;
+  align-items: center;
+  padding: 56px 28px;
+  border-radius: 30px;
+  background-color: var(--color-dark-violet);
 }
 
-.offer {
-  background-color: var(--color-violet-light);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.offerText{
+
+}
+
+.offerTile{
+  max-width: 366px;
+  text-align: left;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: var(--color-white);
+}
+
+.offerDescription{
+  max-width: 294px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 200;
+  color: var(--color-white);
+}
+
+.offer img{
+  position: absolute;
 }
 
 .nextLessonTime {
@@ -104,5 +151,6 @@
 }
 
 .offerContainer {
-  grid-column: span 3;
+  flex: 1 1 100%;
+  min-width: 100px;
 }
