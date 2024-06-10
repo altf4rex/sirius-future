@@ -1,13 +1,68 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'CirceRounded';
+  src: url('./assets/fonts/CirceRounded-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'CirceRounded';
+  src: url('./assets/fonts/CirceRounded-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CirceRounded';
+  src: url('./assets/fonts/CirceRounded-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --font-family-main:'CirceRounded', sans-serif;
+  --color-dark: #323854;
+  --color-white: #FFFFFF;
+  --color-light-dark: #434B74;
+  --color-gray: #ECECEC;
+  --color-dark-gray: #79747F;
+  --color-alert: #E12828;
+  --color-dark-violet: #7362BC;
+  --color-violet-light: #EEEFFF;
+  --color-lesson-fill: #D7F0D6;
+  --color-lesson-stroke: #B8E7B9;
+  --color-gray-card-bg: #FBFBFC;
+  --color-semi-dark-gray: #C8C5CD;
+  --color-bg: #FDFDFF;
+  --color-btn-btn_violet: #8D7FC7;
+  --color-success: #22782B;
+  --color-alert-light: #E84849;
+  --color-dark-blue: #008AFF;
+  --color-blue: #D8ECFF;
+  --color-btn-btn: #DECFFF;
+  --color-light-gray: #F5F5F5;
+  --color-xtra-light-violet: #F6F6FE;
+  --color-yellow: #FFF1CB;
+  --color-btn-secondary-btn: #EEEFFF;
+  --color-violet: #DECFFF;
+  --color-violet-reports: #E8CBFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-family-main);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }

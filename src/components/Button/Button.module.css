@@ -1,0 +1,13 @@
+.button {
+  background-color: var(--color-btn-btn_violet);
+  color: var(--color-white);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: var(--color-dark-violet);
+}
