@@ -36,9 +36,9 @@ const TopNavbar = () => {
               className={styles.profileButton}
               onClick={toggleUserSwitcher}
             >
+              <img src={Arrow}  alt="arrow" className={styles.arrow}/>
               {/* <img src="/user-avatar.png" alt="User Avatar" /> */}
             </button>
-            <img src={Arrow}  alt="arrow" className={styles.arrow}/>
             {showUserSwitcher && <UserSwitcher onClose={toggleUserSwitcher} />}
           </div>
         </div>

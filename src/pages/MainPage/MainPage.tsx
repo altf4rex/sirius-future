@@ -6,6 +6,11 @@ import { RootState, AppDispatch } from '../../store/store';
 import { Offer, UserLesson, UpcomingLesson } from '../../types';
 import Button from '../../components/Button/Button';
 import OfferImage from '../../assets/images/SF_2 1.png'; 
+import Homework from '../../assets/images/homework-icon.svg'; 
+import Reports from '../../assets/images/reports-icon.svg'; 
+
+
+//навряд ли эти части где-то будут переиспользваться но, как вариант можно в отдельные компоненты
 
 function Offers({ offers }: { offers: Offer[] }) {
   return (
@@ -26,9 +31,9 @@ function Offers({ offers }: { offers: Offer[] }) {
 function NextLesson() {
   return (
     <div className={styles.nextLessonContainer}>
-      <h2>Следующее занятие начнется через:</h2>
+      <h2 className={styles.nextLessonTitle}>Следующее занятие начнется через:</h2>
       <div className={styles.nextLessonTime}>
-        <span>6 д</span> <span>12 ч</span> <span>24 мин</span>
+        <p> 6 <span>д</span></p><p> 12 <span>ч</span></p><p> 24 <span>мин</span></p>
       </div>
       <Button text="Button" type="button" />
     </div>
@@ -39,12 +44,12 @@ function HomeworkReports() {
   return (
     <div className={styles.homeworkReportsContainer}>
       <div className={styles.homework}>
-        <h2>Домашние задания</h2>
-        <img src="/homework-icon.png" alt="Домашние задания" />
+        <h2 className={styles.homeworkReportsTitle}>Домашние задания</h2>
+        <img src={Homework} alt="Домашние задания" />
       </div>
       <div className={styles.reports}>
-        <h2>Отчеты от учителей</h2>
-        <img src="/reports-icon.png" alt="Отчеты от учителей" />
+        <h2 className={styles.homeworkReportsTitle}>Отчеты от учителей</h2>
+        <img src={Reports} alt="Отчеты от учителей" />
       </div>
     </div>
   );
@@ -53,7 +58,7 @@ function HomeworkReports() {
 function LessonInfo({ lessons }: { lessons: UserLesson[] }) {
   return (
     <div className={styles.lessonInfoContainer}>
-      <h2>Баланс занятий</h2>
+      <h2 className={styles.lessonInfoTitle}>Баланс занятий</h2>
       <ul>
         {lessons.map((lesson) => (
           <li key={lesson.id}>

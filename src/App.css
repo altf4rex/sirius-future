@@ -23,6 +23,6 @@
   
   .content {
     width: 80%;
-    padding: 20px;
+    padding: 20px 32px;
     background-color: var(--color-bg);
   }

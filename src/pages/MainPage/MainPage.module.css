@@ -12,60 +12,30 @@
 }
 
 .offersContainer {
+  position: relative;
   flex: 1 1 50%;
   min-width: 300px;
+  border: 0;
 }
 
-.nextLessonContainer,
-.homeworkReportsContainer {
-  flex: 1 1 20%;
-  min-width: 150px; 
-}
-
-.lessonInfoContainer {
-  flex: 1 1 30%;
-  min-width: 300px; 
-}
-
-.upcomingLessonsContainer {
-  flex: 1 1 60%;
-  min-width: 300px;
-}
-
-.offersContainer,
-.nextLessonContainer,
-.homeworkReportsContainer,
-.lessonInfoContainer,
-.upcomingLessonsContainer {
-  border-radius: 30px;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-dark-violet);
-}
-.offersContainer{
-  position: relative;
-}
 .offer {
   display: flex;
   align-items: center;
-  padding: 56px 28px;
+  padding: 56px 0px 56px 40px;
   border-radius: 30px;
   background-color: var(--color-dark-violet);
 }
 
-.offerText{
-
-}
-
-.offerTile{
+.offerTile {
   max-width: 366px;
   text-align: left;
   font-size: 32px;
   font-weight: 400;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   color: var(--color-white);
 }
 
-.offerDescription{
+.offerDescription {
   max-width: 294px;
   text-align: left;
   font-size: 16px;
@@ -73,18 +43,53 @@
   color: var(--color-white);
 }
 
-.offer img{
+.offer img {
   position: absolute;
+  right: 0;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.nextLessonContainer {
+  flex: 1 1 30%;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+  background-color: var(--color-yellow);
+  padding: 32px 62px;
+}
+
+.nextLessonTitle {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  color: var(--color-dark);
 }
 
 .nextLessonTime {
-  font-size: 24px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
 }
 
-.nextLessonButton,
-.lessonInfoButton,
-.upcomingLessonsButton {
+.nextLessonTime p {
+  font-size: 36px;
+  margin-right: 12px;
+  text-align: center;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+.nextLessonTime span {
+  font-size: 15px;
+  text-align: center;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+.nextLessonButton {
   background-color: var(--color-btn-btn_violet);
   color: var(--color-white);
   border: none;
@@ -94,22 +99,90 @@
   margin-top: 10px;
 }
 
-.nextLessonButton:hover,
-.lessonInfoButton:hover,
-.upcomingLessonsButton:hover {
+.nextLessonButton:hover {
   background-color: var(--color-dark-violet);
+}
+
+.homeworkReportsContainer {
+  flex: 1 1 14%;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .homework,
 .reports {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  font-size: 20px;
+  font-weight: 400px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.homework {
+  background: var(--color-blue);
+  border-radius: 30px;
+}
+
+.reports {
+  background: var(--color-violet-reports);
+  border-radius: 30px;
 }
 
 .homework img,
 .reports img {
-  margin-right: 10px;
+  padding: 8px;
+  border-radius: 12px;
+  background: var(--color-white);
+}
+
+.lessonInfoContainer {
+  flex: 1 1 30%;
+  min-width: 300px;
+  border-radius: 30px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-dark-violet);
+  padding: 28px;
+}
+
+.lessonInfoTitle {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 400;
+  color: var(--color-dark);
+}
+
+.lessonInfoContainer ul {
+  margin-bottom: 34px;
+  list-style: none;
+}
+
+.lessonInfoButton {
+  background-color: var(--color-btn-btn_violet);
+  color: var(--color-white);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.lessonInfoButton:hover {
+  background-color: var(--color-dark-violet);
+}
+
+.upcomingLessonsContainer {
+  flex: 1 1 60%;
+  min-width: 300px;
+  border-radius: 30px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-dark-violet);
+  padding: 28px;
 }
 
 .upcomingLessonsContainer ul {
@@ -150,7 +223,16 @@
   border-bottom: 1px solid var(--color-gray);
 }
 
-.offerContainer {
-  flex: 1 1 100%;
-  min-width: 100px;
+.upcomingLessonsButton {
+  background-color: var(--color-btn-btn_violet);
+  color: var(--color-white);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.upcomingLessonsButton:hover {
+  background-color: var(--color-dark-violet);
 }
