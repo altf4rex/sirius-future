@@ -32,7 +32,7 @@ export default function MainPage() {
     {
       title: "До 31 декабря любой курс со скидкой 20%",
       description: "До конца года у вас есть уникальная возможность воспользоваться нашей новогодней скидкой 20% на любой курс!",
-      image: "/path/to/image.png" // замените на путь к вашему изображению
+      image: "/path/to/image.png" 
     }
   ];
 
@@ -80,11 +80,11 @@ function HomeworkReports() {
     <div className={styles.homeworkReportsContainer}>
       <div className={styles.homework}>
         <h2>Домашние задания</h2>
-        <img src="/path-to-homework-icon.png" alt="Домашние задания" />
+        <img src="/homework-icon.png" alt="Домашние задания" />
       </div>
       <div className={styles.reports}>
         <h2>Отчеты от учителей</h2>
-        <img src="/path-to-reports-icon.png" alt="Отчеты от учителей" />
+        <img src="/reports-icon.png" alt="Отчеты от учителей" />
       </div>
     </div>
   );
