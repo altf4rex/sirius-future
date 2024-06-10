@@ -162,18 +162,42 @@
   list-style: none;
 }
 
+
+.lessonInfoContainer ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-btn-secondary-btn);
+}
+
+.lessonInfoCount{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: var(--color-btn-btn);
+}
+
 .lessonInfoButton {
-  background-color: var(--color-btn-btn_violet);
-  color: var(--color-white);
-  border: none;
-  border-radius: 30px;
+  width: 100%;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 10px;
+  border-radius: 30px;
+  background-color: var(--color-btn-btn);
+  color: var(--color-dark);
+  border: none;
+
 }
 
 .lessonInfoButton:hover {
-  background-color: var(--color-dark-violet);
+  background-color: var(--color-violet-reports);
 }
 
 .upcomingLessonsContainer {
@@ -223,16 +247,17 @@
   border-bottom: 1px solid var(--color-gray);
 }
 
-.upcomingLessonsButton {
-  background-color: var(--color-btn-btn_violet);
-  color: var(--color-white);
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.upcomingLessonsButton:hover {
-  background-color: var(--color-dark-violet);
-}
+  .upcomingLessonsButton {
+    width: 344px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: var(--color-btn-btn);
+    color: var(--color-dark);
+    border: none;
+  
+  }
+  
+  .upcomingLessonsButton:hover {
+    background-color: var(--color-violet-reports);
+  }

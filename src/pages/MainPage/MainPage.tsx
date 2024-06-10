@@ -61,12 +61,12 @@ function LessonInfo({ lessons }: { lessons: UserLesson[] }) {
       <h2 className={styles.lessonInfoTitle}>Баланс занятий</h2>
       <ul>
         {lessons.map((lesson) => (
-          <li key={lesson.id}>
-            {lesson.title}: {lesson.count}
+          <li className={styles.lessonInfoList} key={lesson.id}>
+            <p>{lesson.title}</p> <span className={styles.lessonInfoCount}>{lesson.count}</span>
           </li>
         ))}
       </ul>
-      <Button text="Button" type="button" />
+      <button className={styles.lessonInfoButton} type="button">Button</button>
     </div>
   );
 }
@@ -88,7 +88,7 @@ function UpcomingLessons({ lessons }: { lessons: UpcomingLesson[] }) {
           </li>
         ))}
       </ul>
-      <Button text="Button" type="button" />
+      <button className={styles.upcomingLessonsButton} type="button">Button</button>
     </div>
   );
 }
