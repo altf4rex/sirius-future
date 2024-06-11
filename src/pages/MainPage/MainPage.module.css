@@ -39,7 +39,7 @@
   max-width: 294px;
   text-align: left;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 300;
   color: var(--color-white);
 }
 
@@ -150,7 +150,8 @@
   padding: 28px;
 }
 
-.lessonInfoTitle {
+.lessonInfoTitle,
+.upcomingLessonsTitle {
   font-size: 24px;
   text-align: left;
   font-weight: 400;
@@ -203,22 +204,27 @@
 .upcomingLessonsContainer {
   flex: 1 1 60%;
   min-width: 300px;
+  padding: 28px;
   border-radius: 30px;
   background-color: var(--color-bg);
   border: 1px solid var(--color-dark-violet);
-  padding: 28px;
 }
 
 .upcomingLessonsContainer ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 38px;
 }
 
-.upcomingLessonsContainer li {
+.upcomingLessonsContainer ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-btn-secondary-btn);
 }
 
 .lessonButton {
@@ -235,8 +241,71 @@
 
 .lessonDetails {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
+  margin-right: 16px;
+  color: var(--color-dark);
+}
+
+.lessonDetailsDate{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 42px;
+  margin-right: 16px;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.lessonDetailsDate span{
+  font-size: 12px;
+}
+
+.lessonDetailsTitle{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.lessonDetailsTime{
+  margin-right: 15px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.lessonDetailsTeacher{
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.lessonDetailsButtons{
+display: flex;
+}
+.lessonDetailsButtonLeft{
+  padding: 8px 10px;
+  margin-right: 4px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: var(--color-dark);
+  background: var(--color-white);;
+  border: 1px solid var(--color-btn-btn);
+  cursor: pointer;
+}
+
+.lessonDetailsButtonRight{
+  padding: 8px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  color: var(--color-white);
+  background: var(--color-btn-btn_violet);
+  border: 0px;
+  cursor: pointer;
+}
+.lessonDetailsButtonLeft:hover{
+  background: var(--color-violet);
+}
+.lessonDetailsButtonRight:hover{
+  background: var(--color-dark-violet);
 }
 
 .lessonItem {

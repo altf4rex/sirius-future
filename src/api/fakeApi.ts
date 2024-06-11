@@ -8,7 +8,7 @@ export const fakeAuthApi = async (email: string, password: string): Promise<User
       } else {
         reject(new Error('Invalid email or password'));
       }
-    }, 1000);
+    }, 0);
   });
 };
 
@@ -23,12 +23,12 @@ export const fakeFetchUserData = async (): Promise<UserData> => {
           { id: 3, title: 'Скорочтение', count: 4 },
         ],
         upcomingLessons: [
-          { id: 1, date: '1 мая', title: 'Ментальная Арифметика', time: '14:00-14:25', teacher: 'Белкина Инна' },
-          { id: 2, date: '30 октября', title: 'Программирование', time: '11:00-11:45', teacher: 'Животновская Оксана' },
-          { id: 3, date: '16 ноября', title: 'Скорочтение', time: '09:00-09:45', teacher: 'Мин Елена' },
+          { id: 1, date: '1', month: 'мая', title: 'Ментальная Арифметика', time: '14:00-14:25', teacher: 'Белкина Инна' },
+          { id: 2, date: '30', month: 'октября', title: 'Программирование', time: '11:00-11:45', teacher: 'Животновская Оксана' },
+          { id: 3, date: '16',month: 'ноября', title: 'Скорочтение', time: '09:00-09:45', teacher: 'Мин Елена' },
         ],
       });
-    }, 1000);
+    }, 0);
   });
 };
 
@@ -40,6 +40,6 @@ export const fetchLessons = async (): Promise<Lesson[]> => {
         { id: 2, title: 'Программирование', start: '2024-03-02T13:00:00', end: '2024-03-02T13:45:00' },
         { id: 3, title: 'Скорочтение', start: '2024-03-02T13:00:00', end: '2024-03-02T13:45:00' },
       ]);
-    }, 1000);
+    }, 0);
   });
 };

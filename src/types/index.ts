@@ -21,6 +21,7 @@ export interface User {
   export interface UpcomingLesson {
     id: number;
     date: string;
+    month: string;
     title: string;
     time: string;
     teacher: string;
