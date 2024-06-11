@@ -17,7 +17,7 @@ const TopNavbar = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <nav className={styles.topNavbar}>
         <div className={styles.leftSection}>
           {location.pathname === "/main" && (
@@ -43,7 +43,7 @@ const TopNavbar = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 

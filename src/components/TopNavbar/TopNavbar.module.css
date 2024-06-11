@@ -3,7 +3,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
 }
 
 .topNavbar {
@@ -17,10 +16,10 @@
   border-bottom-left-radius: 20px; 
   border-bottom-right-radius: 20px; 
   box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.02), 
-    0 4px 8px rgba(0, 0, 0, 0.05), 
-    0 6px 12px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.1); 
+    0 2px 4px rgba(0, 0, 0, 0.01), 
+    0 4px 8px rgba(0, 0, 0, 0.015), 
+    0 6px 12px rgba(0, 0, 0, 0.018),
+    0 8px 16px rgba(0, 0, 0, 0.02); 
 }
 
 .leftSection {

@@ -5,6 +5,8 @@ import { fetchLessonsAsync } from '../../features/scheduleSlice';
 import styles from './SchedulePage.module.css';
 
 export default function SchedulePage() {
+  const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
   const dispatch = useDispatch<AppDispatch>();
   const { lessons, loading, error } = useSelector((state: RootState) => state.schedule);
 
@@ -34,12 +36,12 @@ export default function SchedulePage() {
     return days;
   };
 
-  const daysInMonth = getDaysInMonth(2, 2024); // March 2024
+  const daysInMonth = getDaysInMonth(2, 2024);
   const weeks: Date[][] = [];
   let week: Date[] = [];
 
   daysInMonth.forEach((day) => {
-    if (day.getDay() === 1 && week.length) { // Monday
+    if (day.getDay() === 1 && week.length) {
       weeks.push(week);
       week = [];
     }
@@ -56,25 +58,23 @@ export default function SchedulePage() {
         <select className={styles.subjectSelect}>
           <option value="">Выбрать предмет</option>
         </select>
-        <div className={styles.controls}>
+        <button className={styles.editScheduleButton}>Изменить расписание</button>
+      </div>
+      <div className={styles.controls}>
           <button className={styles.controlButton}>{"<"}</button>
           <span className={styles.monthYear}>Март 2024</span>
           <button className={styles.controlButton}>{">"}</button>
           <button className={styles.todayButton}>Сегодня</button>
           <button className={styles.helpButton}>?</button>
         </div>
-        <button className={styles.editScheduleButton}>Изменить расписание</button>
-      </div>
       <div className={styles.calendar}>
         <div className={styles.weekDays}>
-          <div className={styles.weekDay}>Пн</div>
-          <div className={styles.weekDay}>Вт</div>
-          <div className={styles.weekDay}>Ср</div>
-          <div className={styles.weekDay}>Чт</div>
-          <div className={styles.weekDay}>Пт</div>
-          <div className={styles.weekDay}>Сб</div>
-          <div className={styles.weekDay}>Вс</div>
-        </div>
+        {daysOfWeek.map((day, index) => (
+          <div key={index} className={styles.weekDay}>
+            {day}
+          </div>
+        ))}
+      </div>
         {weeks.map((week, weekIndex) => (
           <div key={weekIndex} className={styles.week}>
             {week.map((day, dayIndex) => (

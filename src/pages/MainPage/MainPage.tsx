@@ -48,7 +48,9 @@ function NextLesson() {
           24 <span>мин</span>
         </p>
       </div>
-      <Button text="Button" type="button" />
+      <button className={styles.nextLessonButton} type="button">
+        Button
+      </button>
     </div>
   );
 }
@@ -102,7 +104,7 @@ function UpcomingLessons({ lessons }: { lessons: UpcomingLesson[] }) {
               <p className={styles.lessonDetailsTitle}>{lesson.title}</p>
             </div>
             <div className={styles.lessonDetails}>
-              <p className={styles.lessonDetailsTime}>{lesson.time}</p>{" "}
+              <p className={styles.lessonDetailsTime}>{lesson.time}</p>
               <p className={styles.lessonDetailsTeacher}>
                 <svg
                   width="16"
@@ -146,14 +148,17 @@ function UpcomingLessons({ lessons }: { lessons: UpcomingLesson[] }) {
           </li>
         ))}
       </ul>
-      <button className={styles.upcomingLessonsButton} type="button">
+      <div className={styles.upcomingLessonsButton}>
+      <button type="button">
         Button
       </button>
+      </div>
     </div>
   );
 }
 
 export default function MainPage() {
+  
   const dispatch = useDispatch<AppDispatch>();
   const { data, loading, error } = useSelector(
     (state: RootState) => state.user

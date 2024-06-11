@@ -7,6 +7,7 @@ import SchedulePage from './pages/SchedulePage/SchedulePage';
 import TopNavbar from './components/TopNavbar/TopNavbar';
 import SideNavbar from './components/SideNavbar/SideNavbar';
 import ProtectedRouter from './components/ProtectedRouter/ProtectedRouter';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage ';
 
 const Layout = () => {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/main" element={<MainPage />} />
               <Route path="/schedule" element={<SchedulePage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Route>
         </Routes>

@@ -8,7 +8,7 @@ export const fakeAuthApi = async (email: string, password: string): Promise<User
       } else {
         reject(new Error('Invalid email or password'));
       }
-    }, 0);
+    }, 600);
   });
 };
 
@@ -28,7 +28,7 @@ export const fakeFetchUserData = async (): Promise<UserData> => {
           { id: 3, date: '16',month: 'ноября', title: 'Скорочтение', time: '09:00-09:45', teacher: 'Мин Елена' },
         ],
       });
-    }, 0);
+    }, 600);
   });
 };
 
@@ -40,6 +40,6 @@ export const fetchLessons = async (): Promise<Lesson[]> => {
         { id: 2, title: 'Программирование', start: '2024-03-02T13:00:00', end: '2024-03-02T13:45:00' },
         { id: 3, title: 'Скорочтение', start: '2024-03-02T13:00:00', end: '2024-03-02T13:45:00' },
       ]);
-    }, 0);
+    }, 600);
   });
 };

@@ -1,3 +1,4 @@
+// SideNavbar.tsx
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './SideNavbar.module.css';
@@ -24,7 +25,7 @@ const navItems = [
   { to: '/faq', icon: IconFaq, label: 'Вопросы' },
 ];
 
-const SideNavbar = () => {
+export default function SideNavbar() {
   return (
     <div className={styles.container}>
       <nav className={styles.sideNavbar}>
@@ -36,19 +37,20 @@ const SideNavbar = () => {
                 to={item.to}
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >
-                <img src={item.icon} alt={item.label} /> {item.label}
+                <img style={{marginRight: "11px"}} src={item.icon} alt={item.label} /> {item.label}
               </NavLink>
             </li>
           ))}
         </ul>
+        <div className={styles.promoContainer}>
         <div className={styles.promo}>
           <p>Учитесь бесплатно</p>
-          <span>Приводите друзей с детьми занимайтесь в Sirius Future и получайте подарки!</span>
+          <span>Приводите друзей с детьми, занимайтесь в Sirius Future и получайте подарки!</span>
           <button>Узнать</button>
+        </div>
         </div>
       </nav>
     </div>
   );
 };
 
-export default SideNavbar;
