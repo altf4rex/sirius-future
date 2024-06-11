@@ -1,48 +1,87 @@
-.schedulePage {
-  padding: 20px;
-}
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 27px;
 }
 
 .subjectSelect {
-  font-size: 16px;
-  padding: 5px 10px;
+  min-width: 253px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px 12px;
+  color: var(--color-dark-gray);
+  border-radius: 8px;
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.subjectSelect:hover {
+  border-color: var(--color-dark-violet);
+}
+
+.subjectSelect:focus {
+  border-color: var(--color-dark-violet);
+  outline: none;
+}
+
+.subjectSelect option {
+  font-size: 12px;
+  color: var(--color-dark);
+  background-color: var(--color-bg);
+}
+
+.subjectSelect:focus-visible {
+  outline: none;
 }
 
 .controls {
   display: flex;
   align-items: center;
+  
 }
 
-.controlButton {
-  margin: 0 5px;
-  font-size: 20px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
 
 .monthYear {
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
 }
 
-.todayButton,
-.helpButton,
-.editScheduleButton {
-  padding: 5px 10px;
-  margin-left: 10px;
-  background-color: var(--color-btn-btn_violet);
-  color: var(--color-white);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 
+.todayButton{
+  margin-left: 32px;
+  margin-right: 16px;
+  padding: 8px 20.5px;
+  font-size: 12px;
+  border: 1px solid var(--color-btn-btn_violet);
+  color: var(--color-dark);
+  background-color: transparent;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.todayButton:hover{
+  background-color: var(--color-violet-light);
+}
+
+
+.editScheduleButton{
+  padding: 10px 93.5px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 30px;
+  color: var(--color-dark);
+  cursor: pointer;
+  background-color: var(--color-btn-btn);
+  border: none;
+  
+}
+.editScheduleButton:hover {
+  background-color: var(--color-violet-reports);
 }
 
 .calendar {
