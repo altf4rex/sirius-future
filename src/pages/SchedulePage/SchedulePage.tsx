@@ -6,6 +6,7 @@ import styles from "./SchedulePage.module.css";
 
 export default function SchedulePage() {
   const daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+  const todayData = new Date().getDate();
 
   const dispatch = useDispatch<AppDispatch>();
   const { lessons, loading, error } = useSelector(
@@ -28,31 +29,6 @@ export default function SchedulePage() {
     return null;
   }
 
-  const getDaysInMonth = (month: number, year: number) => {
-    const date = new Date(year, month, 1);
-    const days = [];
-    while (date.getMonth() === month) {
-      days.push(new Date(date));
-      date.setDate(date.getDate() + 1);
-    }
-    return days;
-  };
-
-  const daysInMonth = getDaysInMonth(2, 2024);
-  const weeks: Date[][] = [];
-  let week: Date[] = [];
-
-  daysInMonth.forEach((day) => {
-    if (day.getDay() === 1 && week.length) {
-      weeks.push(week);
-      week = [];
-    }
-    week.push(day);
-  });
-
-  if (week.length) {
-    weeks.push(week);
-  }
 
   return (
     <div className={styles.schedulePage}>
@@ -167,47 +143,48 @@ export default function SchedulePage() {
           </svg>
         </button>
       </div>
-      <div className={styles.calendar}>
-        <div className={styles.weekDays}>
-          {daysOfWeek.map((day, index) => (
-            <div key={index} className={styles.weekDay}>
-              {day}
+      <div className={styles.weekDays}>
+        {daysOfWeek.map((day, index) => (
+          <div key={index} className={styles.weekDay}>
+            {day}
+          </div>
+        ))}
+      </div>
+      <div className={styles.shedule}>
+        <div className={styles.daysContainer}>
+          {lessons.map((dayData, index) => (
+            <div key={index} className={styles.day}>
+              <div className={styles.dayNumber}>
+                {new Date(dayData.date).getDate()}
+              </div>
+              {dayData.lessons && dayData.lessons.length > 0
+                ? dayData.lessons.map((lesson) => (
+                  <div
+                  key={lesson.id}
+                  className={
+                    new Date(dayData.date).getDate() >= todayData && (lesson.id < 39)
+                      ? styles.lessonGreen
+                      : styles.lesson
+                  }
+                >
+                      <div className={styles.lessonTime}>
+                        {new Date(lesson.start).toLocaleTimeString("ru-RU", {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}{" "}
+                        -{" "}
+                        {new Date(lesson.end).toLocaleTimeString("ru-RU", {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
+                      </div>
+                      <div className={styles.lessonTitle}>{lesson.title}</div>
+                    </div>
+                  ))
+                : null}
             </div>
           ))}
         </div>
-        {weeks.map((week, weekIndex) => (
-          <div key={weekIndex} className={styles.week}>
-            {week.map((day, dayIndex) => (
-              <div key={dayIndex} className={styles.day}>
-                <div className={styles.dayNumber}>{day.getDate()}</div>
-                {lessons
-                  .filter(
-                    (lesson) =>
-                      new Date(lesson.start).toDateString() ===
-                      day.toDateString()
-                  )
-                  .map((filteredLesson) => (
-                    <div key={filteredLesson.id} className={styles.lesson}>
-                      <div className={styles.lessonTime}>
-                        {new Date(filteredLesson.start).toLocaleTimeString(
-                          "ru-RU",
-                          { hour: "2-digit", minute: "2-digit" }
-                        )}{" "}
-                        -{" "}
-                        {new Date(filteredLesson.end).toLocaleTimeString(
-                          "ru-RU",
-                          { hour: "2-digit", minute: "2-digit" }
-                        )}
-                      </div>
-                      <div className={styles.lessonTitle}>
-                        {filteredLesson.title}
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
     </div>
   );
